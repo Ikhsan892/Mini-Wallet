@@ -5,7 +5,6 @@ import (
 	"github.com/spf13/cobra"
 	"wallet"
 	"wallet/cmd/command"
-	"wallet/docs"
 )
 
 func main() {
@@ -29,9 +28,6 @@ func main() {
 
 	app := wallet.New()
 	app.Start()
-
-	docs.SwaggerInfo.BasePath = "/api"
-	docs.SwaggerInfo.Host = fmt.Sprintf("localhost:%s", app.Settings().App.AppWebserverPort)
 
 	command.RootCmd.AddCommand(command.NewServer(app))
 	command.RootCmd.AddCommand(command.NewMigration(app))

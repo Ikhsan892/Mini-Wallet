@@ -15,17 +15,6 @@ type UserController struct {
 	conn *gorm.DB
 }
 
-// Initialize
-// @Summary API untuk Inisialisasi akun baru
-// @Tags    Menu
-// @Accept  json
-// @Produce json
-// @Param   menus body     service.InitializeAccountService true "Data init"
-// @Failure 400   {object} api.ApiError
-// @Failure 401   {object} api.ApiError
-// @Failure 404   {object} api.ApiError
-// @Failure 500   {object} api.ApiError
-// @Router  /v1/init [post]
 func (m *UserController) InitializeAccount(c echo.Context) error {
 	tx := m.conn.Begin()
 	srv := service.NewInitializeAccountService(
