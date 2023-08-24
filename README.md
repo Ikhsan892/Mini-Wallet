@@ -49,6 +49,12 @@ for sqlite you don't have to install locally, because the database driver alread
 
 ### Prerequisites
 
+copy .env.example and rename to .env and change APP_LOCATION to project directory
+```editorconfig
+APP_LOCATION=<project directory>
+```
+
+
 first install the dependencies
 * golang
   ```sh
